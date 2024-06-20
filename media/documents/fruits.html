@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1>fruits</h1>
+        enter the name of fruit<input type ="text" Id="input"/>
+        <button onclick="myFunction()">ok</button>
+        <p id="demo"></p>
+        <script>
+             function myFunction(){
+                var text;
+                var fruits=document.getElementById("input").value;
+                    switch (fruits)  {
+                       
+                            case "apple":
+                            text ="apple is good";
+                            break;
+                             case "mango" :
+                            text ="mango is good";
+                            break;
+                            case "grapes":
+                            text ="grapes is good";
+                            break;
+                            
+                            default:
+                                text ="not good" 
+                    }
+                    document.getElementById("demo").innerHTML = text;
+                    
+                }
+                </script>
+    </body>
+    </html>

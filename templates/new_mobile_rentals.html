@@ -1,0 +1,44 @@
+{% extends 'seller_template/seller_template.html' %}
+{% block content %}
+
+<table class="table">
+    <div class="Mobile_Rentals">
+<!--      <table class="table table-striped"-->
+           <thead>
+           <tr>
+                <th scope="col">sl no</th>
+
+                <th scope="col">mobile_name</th>
+
+                <th scope="col">mobile_specification</th>
+                <th scope="col">price</th>
+                <th scope="col">delete</th>
+                <th scope="col">update</th>
+
+           </tr>
+           </thead>
+
+           {% for i in new %}
+           <tr>
+               <th scope="row">{{forloop.counter}}</th>
+
+               <td>{{i.mobile_name}}</td>
+
+               <td>{{i.mobile_specification}}</td>
+               <td>{{i.price}}</td>
+               <td><a href="{% url 'delete_mobile_rentals_data' i.id %}">
+                   <button type="button" class="btn btn-primary">delete</button>
+                    </a></td>
+               <td><a href="{% url 'update_mobile_rentals_data' i.id %}">
+                   <button type="button" class="btn btn-primary">update</button>
+                    </a></td>
+
+    </tr>
+           {% endfor %}
+           <div class="d-grid gap-2 d-md-block">
+
+</div>
+
+
+</table>
+{% endblock %}

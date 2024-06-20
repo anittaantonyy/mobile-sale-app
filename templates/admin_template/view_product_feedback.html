@@ -1,0 +1,52 @@
+{% extends 'admin_template/admin_template.html' %}
+{% block content %}
+
+<table class="table">
+    <div class="Feedback">
+<!--      <table class="table table-striped">-->
+           <thead>
+           <tr>
+                <th scope="col">sl no</th>
+
+                <th scope="col">date</th>
+
+                <th scope="col">feedback</th>
+                <th scope="col">reply</th>
+
+
+           </tr>
+           </thead>
+
+           {% for i in form %}
+           <tr>
+               <th scope="row">{{forloop.counter}}</th>
+
+               <td>{{i.date}}</td>
+
+               <td>{{i.feedback}}</td>
+
+               <td>  {% if i.reply == None %}
+                   <a href="{% url 'update_product_feedback' i.id %}">
+                   <button type="button" class="btn btn-secondary">reply </button>
+
+
+
+
+                        {% else %}
+                            {{i.reply}}
+
+
+
+                      {% endif %}</td>
+
+
+
+    </tr>
+           {% endfor %}
+           <div class="d-grid gap-2 d-md-block">
+
+</div>
+
+
+</table>
+{% endblock %}

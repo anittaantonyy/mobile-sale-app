@@ -1,0 +1,27 @@
+{% extends 'customer_template/customer_template.html' %}
+
+{% block content %}
+<div class="row">
+  {% for i in new %}
+  <div class="col-md-4 mb-4">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ i.document.url }}" class="card-img-top" height="200px" alt="...">
+      <div class="card-body">
+<!--        <p class="card-text">{{i.user}}</p>-->
+        <p class="card-text">Brand:{{i.mobile_name}}</p>
+        <p class="card-text">specification:{{i.mobile_specification}}</p>
+        <p class="card-text">price:{{i.price}}</p>
+
+                   <a href="{% url 'add_to_cart' i.id %}">
+                  <button type="button" class="btn btn-primary">add to cart</button>
+                   </a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
+
+
+

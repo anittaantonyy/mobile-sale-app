@@ -1,0 +1,33 @@
+{% extends 'seller_template/seller_template.html' %}
+
+{% block content %}
+<div class="row">
+  {% for i in new %}
+  <div class="col-md-4 mb-4">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ i.product.document.url }}" class="card-img-top" height="200px" alt="...">
+      <div class="card-body">
+<!--        <p class="card-text">{{i.user}}</p>-->
+        <p class="card-text">Brand:{{i.product.mobile_name}}</p>
+        <p class="card-text">specification:{{i.product.mobile_specification}}</p>
+        <p class="card-text">price:{{i.product.price}}</p>
+
+          <button type="button" class="btn btn-secondary">order confirmed </button>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+  {% endfor %}
+
+</div>
+{% endblock %}
+
